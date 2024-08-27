@@ -1,0 +1,1142 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretendard/Pretendard-SemiBold.eot');
+    src: url('font/pretendard/Pretendard-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('font/pretendard/Pretendard-SemiBold.woff2') format('woff2'),
+        url('font/pretendard/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretendard/Pretendard-Regular.eot');
+    src: url('font/pretendard/Pretendard-Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/pretendard/Pretendard-Regular.woff2') format('woff2'),
+        url('font/pretendard/Pretendard-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretendard/Pretendard-Bold.eot');
+    src: url('font/pretendard/Pretendard-Bold.eot?#iefix') format('embedded-opentype'),
+        url('font/pretendard/Pretendard-Bold.woff2') format('woff2'),
+        url('font/pretendard/Pretendard-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    /* 10px, 1rem */
+    -webkit-text-size-adjust: none;
+    /* webkit : 크롬 사파리 오페라에게 적용이 되게끔 하는 코드 */
+    text-size-adjust: none;
+    /* 기본코드 */
+}
+
+body {
+    color: #333;
+    line-height: 1;
+    font-family: 'pretendard';
+    font-weight: normal;
+    font-size: 1.6rem;
+    /* 글자크기를 가변크기로 만들기위해 픽셀이 아닌 rem으로 설정 */
+}
+
+li {
+    list-style: none;
+}
+
+main .inner {
+    max-width: 1280px;
+    width: calc(100% - 60px);
+    margin: 15rem auto;
+    /* margin: 150px auto로 설정됨 */
+
+}
+
+.title {
+    margin-bottom: 6rem;
+    /* 60px */
+}
+
+.title h3 {
+    font-size: 4.5rem;
+    /* 45px */
+    font-family: 'yg-jalnan';
+}
+
+.title p {
+    margin-top: 1.3rem;
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+/********************* .header  *******************/
+
+.header {
+    height: 105px;
+    border-bottom: 1px solid hsl(0, 0%, 0%, 0.1);
+}
+
+.header .inner {
+    width: calc(100% - 76px);
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .inner .logo {}
+
+.header .inner .logo a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header .inner .logo a img {}
+
+.header .inner .logo a strong {
+    font-family: 'yg-jalnan';
+    font-size: 1.9rem;
+    position: relative;
+}
+
+.header .inner .logo a strong:before {
+    content: '';
+    width: 1px;
+    height: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+}
+
+.header .inner .nav {}
+
+.header .inner .nav .gnb {
+    display: flex;
+}
+
+.header .inner .nav .gnb li {
+    /* padding: 0 50px; */
+}
+
+.header .inner .nav .gnb li a {
+    /* display: block; */
+    padding: 0 50px;
+    position: relative;
+    /* li가 아닌 a에게 패딩을 주는 이유는 a태그의 클릭범위를 넓히기 위함! */
+}
+
+.header .inner .nav .gnb li a:before {
+    content: '';
+    width: 3px;
+    height: 3px;
+    background-color: #d9d9d9;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.header .inner .nav .gnb li:first-child a:before {
+    display: none;
+}
+
+/* 중요!! 내가 실수한거 또 나왔음(html 보면서 확인할것) a:first-child로 하면 어차피 
+li의 첫번째 a밖에 없기 때문에 a:first-child를 설정하면 모든 a가 선택됨
+(각각의 li태그 안의 a태그는 하나밖에 없기 때문)
+그래서 a:first-child가 아니라 첫번째li의 a태그에게, 즉 li:first-child a 로
+입력해야 함 */
+
+.header .inner .header-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.header .inner .header-menu strong {
+    position: relative;
+}
+
+.header .inner .header-menu strong:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 14px;
+    background: url(../img/icon-home.svg) center center / 100%;
+    /* center 2개는 각각 x축 y축 / 100%는 width12px의 100% */
+    /* 아! 항상 html폴더에서 경로를 설정할땐 바로 img폴더가 검색이 됐지만
+    지금 이 화면은 html폴더가 아니라 css폴더다! 그래서 ../로 한단계 뒤로 돌아가야
+    img 파일이 검색된다! 이럴수가 백그라운드 url도 꼭 다시 외워두자 */
+}
+
+.header .inner .header-menu strong a {
+    padding: 10px 10px 10px 0;
+}
+
+.header .inner .header-menu .all-menu {}
+.header .inner .header-menu .all-menu a {padding: 25px 15px 10px 0;}
+.header .inner .header-menu .all-menu img {}
+
+/* main-title */
+.main-title .inner {
+    margin: 11.5rem auto 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-title .inner .title-text {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.main-title .inner .title-text h2 {
+    font-family: 'yg-jalnan';
+    font-size: 7rem;
+}
+
+.main-title .inner .title-text h2 span {
+    color: #007aff;
+}
+
+.main-title .inner .title-text img {}
+
+.main-title .inner .main-btn {}
+
+.main-title .inner .main-btn a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.main-title .inner .main-btn a span {
+    font-size: 2.4rem;
+    font-family: 'yg-jalnan';
+}
+
+.main-title .inner .main2-btn a img {}
+
+/* .main-visual */
+.main-visual {}
+
+.main-visual .swiper {}
+
+.main-visual .swiper .swiper-wrapper {}
+
+.main-visual .swiper .swiper-wrapper .swiper-slide {
+    width: 836px;
+    height: 395px;
+    /* padding: 25px 5rem; */
+    margin: 25px 5rem;
+    /* 볼더박싱 때문에 패딩으로 설정하면 이미지 크기가 작아져버린다!
+        그래서 마진으로 변경! */
+}
+
+.main-visual .swiper .swiper-wrapper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .2);
+    border-radius: 25px;
+}
+
+.main-visual .swiper .swiper-btn {
+    width: 836px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+}
+
+.main-visual .swiper-button-next,
+.main-visual .swiper-button-prev {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: url(../img/slide-next-btn.svg) center center / 22px no-repeat
+        /* #fff; */
+    ;
+    background-color: #fff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+    /* z-index: 9; 
+    자식에게 z-index를 적용해도 부모자체가 이미 뒤에 있기 때문에 뒤에 있는 부모의
+    자식을 앞으로 땡겨도 소용이 없었음 */
+}
+
+.main-visual .swiper-button-prev {
+    background: url(../img/slide-prev-btn.svg) center center / 22px no-repeat #fff;
+    left: -40px;
+}
+
+.main-visual .swiper-button-next {
+    background: url(../img/slide-next-btn.svg) center center / 22px no-repeat #fff;
+    right: -40px;
+}
+
+/* left, right의 -40%은 가지고 있는 width값의 1/2 */
+.main-visual .swiper-button-prev:after,
+.main-visual .swiper-button-next:after {
+    display: none;
+}
+
+.main-visual .swiper-pagination-bullet-active {
+    width: 30px;
+    border-radius: 50px;
+    background-color: #4478ff;
+}
+
+.main-visual .swiper-pagination {
+    bottom: 0;
+}
+
+/* .program */
+
+.program {}
+
+.program .inner {
+    position: relative;
+}
+
+.program .title_btn {
+    /* width: 728px; */
+    /* 728 / 1280 * 100 => 56.87% */
+    width: 56.87%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.program .title_btn .title {}
+
+.program .title_btn .title h3 {}
+
+.program .title_btn .title p {}
+
+.program .title_btn .cont_btn {}
+
+.program .title_btn .cont_btn img {
+    transition: 1s;
+}
+.program .title_btn .cont_btn img:hover {
+    transform: rotate(180deg);
+}
+
+.program .list {}
+
+.program .list .item_wrap {
+    width: 56.87%;
+    /* width: calc(100% - 446px - 94px); */
+}
+
+.program .list .item_wrap .item {
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 5px 20px rgba(0, 15, 67, 0.2);
+    padding: 30px 35px;
+    margin-bottom: 30px;
+}
+
+.program .list .item_wrap .item a {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.program .list .item_wrap .item a span {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #4478FF;
+    color: #fff;
+    font-family: 'yg-jalnan';
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.program .list .item_wrap .item a .item_info {
+    width: calc(100% - 80px - 30px);
+}
+
+.program .list .item_wrap .item a .item_info h4 {
+    font-size: 2.6rem;
+    margin-bottom: 5px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.program .list .item_wrap .item a .item_info ul {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 28px;
+}
+
+.program .list .item_wrap .item a .item_info ul li {
+    position: relative;
+    padding-left: 26px;
+    line-height: 1.5;
+}
+
+.program .list .item_wrap .item a .item_info ul li.date::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: url('../img/icon-date.svg') center center / 16px no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.program .list .item_wrap .item a .item_info ul li.date::after {
+    content: '';
+    width: 1px;
+    height: 13px;
+    background-color: #666666;
+    position: absolute;
+    top: 50%;
+    right: -14px;
+    transform: translateY(-50%);
+}
+
+.program .list .item_wrap .item a .item_info ul li.place::before {
+    content: '';
+    width: 15px;
+    height: 18px;
+    background: url('../img/icon-place.svg') center center / 15px no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.program .list .item_image {
+    /* width: 446px */
+    /* 446 / 1280 * 100 => ???? */
+    width: 34.84%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.program .list .item_image img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    display: block;
+}
+/* .recipe */
+.recipe {}
+.recipe .title {
+    text-align: center;
+}
+.recipe .title h3 {}
+.recipe .title p {}
+
+.recipe .list {
+    display: flex;
+    justify-content: space-between;
+}
+.recipe .list .recipe_slide {
+    /* width: 620px; 
+    620 / 1280 * 100 => */
+    width: 48.43%;
+    max-height: 620px;
+    height: 48.43vw;
+    background-color: #FF8515;
+    border-radius: 25px;
+    position: relative;
+}
+.recipe .list .recipe_slide::before {
+    content: '';
+    width: 100%;
+    height: 120px;
+    background-color: #FF6B00;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 25px 25px;
+}
+.recipe .list .recipe_slide .swiper {
+    height: 100%;
+    position: static;
+}
+.recipe .list .recipe_slide .swiper .swiper-wrapper {
+    transform: none !important;
+    position: static;
+} 
+.recipe .list .recipe_slide .swiper .swiper-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: none !important; 
+    opacity: 0 !important;
+    padding: 10rem 6rem; 
+}
+.recipe .list .recipe_slide .swiper .swiper-slide-active {
+    opacity: 1 !important;
+}
+.recipe .list .recipe_slide .swiper .swiper-slide span {
+    padding: 10px 20px;
+    background-color: #BD4F00;
+    display: inline-block;
+    font-size: 2.2rem;
+    color: #fff;
+    font-family: 'yg-jalnan';
+    border-radius: 40px;
+}
+.recipe .list .recipe_slide .swiper .swiper-slide h4 {
+    margin-top: 20px;
+    font-family: 'yg-jalnan';
+    font-size: 4.5rem;
+    color: #fff;    
+    word-break: keep-all;
+    line-height: 1.3;
+}
+.recipe .list .recipe_slide .swiper .swiper-slide figure {
+    width: 70%;
+    /* 483 / 620 * 100 => 70.64 ??? */
+    /* text-align: right;
+    transform: translateY(100px); */
+    position: absolute;
+    right: 0;
+    bottom: -60px;
+}
+.recipe .list .recipe_slide .swiper .swiper-slide figure img {
+    width: 100%;
+}
+.recipe  .swiper-button-next, 
+.recipe  .swiper-button-prev {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: url('../img/slide-next-btn-w.svg') center center / 15px no-repeat;
+    top: auto;
+    bottom: 160px;    
+}
+.recipe  .swiper-button-prev {
+    background: url('../img/slide-prev-btn-w.svg') center center / 15px no-repeat;
+    left: 60px;    
+}
+.recipe  .swiper-button-next {
+    right: auto;
+    left: 130px;
+}
+
+.recipe .swiper-button-next:after, 
+.recipe .swiper-button-prev:after {
+    display: none;
+}
+.recipe .swiper-play div {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 160px;
+    left: 206px;
+    background: url(../img/slide-stop-btn.svg) center center / 11px no-repeat;
+}
+.recipe .swiper-play .swiper-start {
+    background: url(../img/slide-play-btn.svg) center center / 11px no-repeat;
+    display: none;
+}
+
+.recipe .list .item_wrap {
+    width: 48.43%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.recipe .list .item_wrap .item {
+    /* 296 / 620 * 100 =>  */
+    width: 47.74%;
+    max-height: 296px;
+    /* 296 / 1280 * 100 =>  */
+    height: 23.12vw;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.recipe .list .item_wrap .item a {
+    height: 100%;
+}
+.recipe .list .item_wrap .item a figure {
+    width: 100%;
+    height: 100%;
+}
+.recipe .list .item_wrap .item a figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 그라디언트 io */
+.recipe .list .item_wrap .item h4 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: #fff;
+    padding-bottom: 30px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.7875525210084033) 0%, rgba(0,0,0,0) 92%);
+    
+    opacity: 0;
+    transition: 0.7s;
+}
+.recipe .list .item_wrap .item:hover h4 {
+    opacity: 1;
+}
+.news .inner {
+    margin-bottom: 0;
+}
+
+.news .inner .title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news .inner .title ul {
+    display: flex;
+    gap: 30px;
+}
+
+.news .inner .title ul li {
+    position: relative;
+    font-size: 2.2rem;
+    line-height: 4.2rem;
+    font-weight: bold;
+}
+.news .inner .title ul li:not(:first-child) a {color:#66666688;}
+.news .inner .title ul li:not(:first-child) a:before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: #66666688;
+    border-radius: 50%;
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.news .inner .title ul li a.on:before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url(../img/icon-check.svg) center center / 20px no-repeat;
+    position: absolute;
+    top: 50%;
+    left: -26px;
+    transform: translateY(-50%);
+}
+.news .inner .title ul li a {
+    font-size: 
+}
+.news .news-list li {
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.news .news-list li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.news .news-list li a div {
+    width: 80%;
+    display: flex;
+    column-gap: 40px;
+}
+
+.news .news-list li a div b {
+    width: 70px;
+    color: #ff8a00;
+    font-size: 1.8rem;
+}
+
+.news .news-list li a div h4 {
+    width: calc(100% - 70px - 45px);
+    font-size: 1.8rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* 텍스트얼라인,라인하이트를 쓰지않고 굳이 플렉스를 쓰는 이유는 
+    가변크기에 따라 유동적으로 움직일 수 있게끔 설정하기 위함! */
+.news .news-list li a span {
+    color: #444;
+    font-size: 1.8rem;
+    display: block;
+    width: 15%;
+}
+
+.sns {
+    margin: 9rem 0;
+}
+
+.sns ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sns ul li {
+    width: 53px;
+    height: 53px;
+    background-color: #142143;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: .5s;
+}
+.sns ul li:hover {
+    background-color: #007aff;
+}
+.sns ul li a {}
+
+.sns ul li a img {}
+
+/* footer */
+.footer {
+    width: 100%;
+    background-color: #142143;
+    color: #fff;
+    padding: 47px 30px 61px;
+}
+
+.footer .footer-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.footer ul li:first-child:before {
+    display: none;
+}
+
+.footer .footer-logo img {}
+
+.footer ul {
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    ;
+    margin-bottom: 5px;
+}
+
+.footer .footer-menu li {
+    position: relative;
+}
+
+.footer ul li:before {
+    content: '';
+    width: 1px;
+    height: 11px;
+    background-color: rgba(255, 255, 255, 0.349);
+    position: absolute;
+    top: 50%;
+    left: -17px;
+    transform: translateY(-50%);
+}
+
+.footer .footer-logo .footer-menu li a {}
+
+.footer .address {}
+
+.footer .address li {}
+
+.footer .address li a {}
+
+@media screen and (max-width:1050px) {
+    .header .inner .nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    html {
+        font-size: 50%;
+        /* 8px */
+    }
+
+    .header .inner {
+        width: calc(100% - 60px);
+    }
+
+    .header .inner .logo a strong {
+        font-size: 2.12rem;
+    }
+
+    .header .inner .header-menu strong a {
+        font-size: 1.75rem;
+    }
+
+    .main-title .inner .title-text img {
+        width: 22.5rem;
+        /* 180 / 8 = 22.5 */
+    }
+
+    .program .list .item-wrap .item a span {
+        font-size: 2.25rem;
+    }
+
+    .program .list .item-wrap .item a .item-info ul li {
+        font-size: 2rem;
+    }
+
+    .program .list .item-wrap h4 {
+        opacity: 1;
+        font-size: 2.25rem;
+    }
+    .program .list .item_image img {
+        height: 60rem;
+        /* object-fit: cover; */
+    }
+    .news .news-list li a div h4 {
+        font-size: 2.25rem;
+    }
+
+    .news .news-list li a div b {
+        font-size: 2.25rem;
+    }
+}
+
+/* 1024 */
+
+/* 태블릿 1024 ~ 768
+    태블릿 모바일767 ~ 481
+    모바일 480 ~ 320 */
+/* 1024 960 767 640 540 480 414 380 (중간지점) */
+
+@media screen and (max-width:960px) {
+    .main-title .inner {
+        display: block;
+    }
+
+    .main-title .inner .main-btn a {
+        margin-top: 30px;
+    }
+
+    .main-visual .swiper .swiper-wrapper .swiper-slide {
+        width: 683px;
+        height: 320px;
+    }
+
+    .main-visual .swiper .swiper-btn {
+        width: 683px;
+    }
+
+    .main-visual .swiper-button-next,
+    .main-visual .swiper-button-prev {
+        width: 50px;
+        height: 50px;
+        /* background: url(../img/slide-prev-btn.svg) center center / 13px no-repeat #fff; */
+        /* 백그라운드 url을 또 넣어서 width만 조절해도 되지만 더 좋은방법 백그라운드 사이즈가 있따 */
+        background-size: 13px;
+    }
+
+    .main-visual .swiper-button-prev {
+        left: -25px;
+    }
+
+    .main-visual .swiper-button-next {
+        right: -25px;
+    }
+
+    .program .list .item-wrap {
+        width: 65.88%;
+    }
+
+    .program .list .item-wrap img {
+        padding: 24px 28px;
+    }
+
+    .program .list .item-wrap .item-image {
+        margin-bottom: 3rem;
+    }
+
+    .program .title-btn {
+        width: 100%;
+    }
+
+    .program .list .item-wrap {
+        width: 31.88%;
+    }
+
+    .program .list .item-wrap .item {
+        width: 100%;
+        height: 29.89vw;
+    }
+
+    .recipe .list .item-wrap .item:nth-child(2)~.item {
+        display: none;
+    }
+
+    .recipe .list .recipe-slide {
+        width: 65.88%;
+        height: 61.77vw;
+    }
+
+    /* 767  */
+    .item-image {}
+    .recipe .list {
+        display: block;
+    }
+    .recipe .list .item_wrap .item:nth-child(2) ~ .item {
+        display: none;
+    }
+    .recipe .list .recipe_slide {
+        width: 100%;
+        height: 92.3vw;
+    }
+    .recipe .list .recipe_slide .swiper .swiper-slide {padding: 40px;}
+    .recipe .list .recipe_slide::before {
+        height: 10vw;
+    }
+    .recipe .swiper-button-next, .recipe .swiper-button-prev {
+        width: 7.5rem;
+        height: 7.5rem;
+        /* bottom: 95px; */
+        /* background-size: 9px; */
+    }
+    .recipe .swiper-button-prev {
+        left: 40px;
+    }
+    .recipe .swiper-button-next {
+        left: 110px;
+    }
+    .recipe .list .item_wrap {
+        width: 100%;
+        margin-top: 45px;
+    }
+    .recipe .list .item_wrap .item {
+        width: 48.5%;
+        height: 44.34vw;
+    }
+    .recipe .list .item_wrap .item:hover h4 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    .news .title h3 {
+        text-align: center;
+    }
+    .news .inner .title {
+        display: block;
+        gap: 15px;
+    }
+    .news .inner .title ul {
+        margin-left: 30px;
+        margin-top: 15px;
+    }
+    .news .inner .title ul li {
+        font-weight: bold;
+    }
+}
+@media screen and (max-width:640px) {
+    .main-title .inner .title-text h2 {
+        font-size: 3.75rem;
+    }
+    .main-title .inner .title-text img {width: 15.75rem;}
+    .main-visual .swiper .swiper-btn {
+        width: 90%;
+    }
+    .main-visual .swiper-button-next,
+    .main-visual .swiper-button-prev {
+        width: 30px;
+        height: 30px;
+        background-size: 8px;
+        right: -15px;
+    }
+    .main-visual .swiper-button-prev {
+        left: -15px;
+    }
+    .main-title .inner .main-btn a {margin-top: 15px;
+        gap: 7px;}
+    .main-title .inner .main-btn a img {width: 2.5rem;
+        height: 2.5rem;}
+    .main-title .inner .main-btn a span {font-size: 1.75rem;}
+    .main-visual .swiper .swiper-wrapper .swiper-slide {
+        width: calc(100% - 30px);
+        height: 48.58vw;
+    }
+    .program .list .item_wrap .item {
+        padding : 10px 15px;
+    }
+    .program .list .item_wrap .item a span {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    .program .list .item_image img {
+        height: 63.75rem
+    }
+    .news .news-list li a {
+        display: block;
+    }
+    .news .news-list li a div {
+        width: 100%;
+        margin-bottom: 5px;
+        display: block;
+    }
+    .news .news-list li a div h4 {
+        width: 100%;
+        margin-top: 3px;
+    }   
+}
+@media screen and (max-width:480px) {
+    html {
+        font-size: 37.5%;
+        /* font-size: 6px */
+    }
+    main .inner {
+        width: calc(100% - 30px);
+    }
+    .header .inner {
+        width: calc(100% - 30px);
+    }
+    .header .inner .logo a strong {
+        font-size: 2.83rem;
+    }
+    .header .inner .header-menu strong {display: none;}
+    .main-title .inner {
+        /* margin: 44px auto 30px; */
+        margin: 7.3rem auto 5px;}
+    .main-title .inner .title-text h2 {font-size: 5rem;}
+    .main-title .inner .title-text img {font-size: 22rem;}
+    .main-title .inner .main-btn a span {
+        font-size: 2.5rem;}
+    .main-title .inner .main-btn a img {width: 3.3rem;
+        height: 3.3rem;}
+    .main-visual .swiper-pagination-bullet {width: 10px;
+        height: 10px;}
+    .main-visual .swiper-pagination-bullet-active {width: 3.3rem;}
+    .title {
+        margin-bottom: 1.33333rem;
+    }
+    .title p {font-size: 2.33333rem;}
+    .recipe .swiper-button-next, .recipe .swiper-button-prev {
+        width: 10rem;
+        height: 10rem;
+    }
+    .program .list .item_wrap {width: 100%;}
+    .program .list .item_wrap .item {
+        padding: 3rem 3.33rem;
+        margin-bottom: 3.33rem;
+    }
+    .program .list .item_wrap .item a {
+        gap: 10px;
+    }
+    .program .list .item_wrap .item a .item_info ul {display: none;}
+    .program .list .item_image {display: none;}
+    .program .list .item_wrap .item a .item_info h4 {font-size: 3rem;}
+    .program .list .item_wrap .item a span {
+        width: 10.66666rem;
+        height: 10.66666rem;
+        font-size: 3rem;
+    }
+    .program .list .item_wrap .item a .item_info {width: calc(100% - 10.66rem - 10px);}
+    .program .title_btn {width: 100%;}
+    .recipe .list .recipe_slide .swiper .swiper-slide figure {bottom: -20px;}
+    .recipe .list .item_wrap {margin-top: 1.66666rem;}
+    .news .inner .title ul {margin-bottom: 25px;}
+    .news .inner .title ul li {font-size: 2.3888rem;}
+    .news .news-list li {padding: 3rem 3.1666rem;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, .2);
+        border-radius: 15px;
+        margin-bottom: 10px;}
+    .news .news-list li a {padding: 1.6666rem;}
+    .news .news-list li a div b {font-size: 2.5rem;}
+    .news .news-list li a div h4 {font-size: 3rem;}
+    .news .news-list li a span {font-size: 2.5rem;}
+    .footer ul {font-size: 2.5rem;
+        display: block;
+        text-align: center;}
+    .footer ul li:before {display: none;}
+    .footer ul li a {margin-bottom: 10px;
+        display: block;
+        font-weight: bold;}
+    .footer ul li:nth-child(1) a {color:#007aff;}
+}
+@media screen and (max-width:380px) {
+    .news .inner .title ul li {
+        font-size: 2.5rem;
+        height: 20px;
+        align-items: center;
+    }
+    .news .inner .title ul {
+        line-height: 20px;
+    }
+    .sns ul {
+        margin: 27px 0;
+    }
+    .sns ul li {
+        width: 40px;
+        height: 40px;
+    }
+    .sns ul li a img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* 480px */
+/* 자식은 부모의 폰트사이즈를 상속 받음! 그래서 부모의 폰트사이즈를 변경하면 자연스럽게
+자식의 폰트사이즈도 변경되지만 이미 자식에게 값이 부여된 상태에서 부모에게 사이즈를 변경하면
+변경사항 없음 */
